@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20230823 16:04:27.225" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="C:\Kaggle\autotest\login.robot">
+<test id="s1-t1" name="Verify Successful Login to FornovaMI" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://ci-dev.fornova.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230823 16:04:28.623" level="INFO">Opening browser 'Chrome' to base url 'https://ci-dev.fornova.com/'.</msg>
+<status status="PASS" starttime="20230823 16:04:28.622" endtime="20230823 16:04:32.407"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230823 16:04:32.407" endtime="20230823 16:04:35.206"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<arg>and.lototskyi@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230823 16:04:35.207" level="INFO">Typing text 'and.lototskyi@gmail.com' into text field 'css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']'.</msg>
+<status status="PASS" starttime="20230823 16:04:35.206" endtime="20230823 16:04:35.334"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']</arg>
+<arg>555555</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230823 16:04:35.334" level="INFO">Typing password into text field 'css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']'.</msg>
+<msg timestamp="20230823 16:04:35.363" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230823 16:04:35.405" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230823 16:04:35.334" endtime="20230823 16:04:35.405"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button[type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230823 16:04:35.406" level="INFO">Clicking element 'css:button[type='submit']'.</msg>
+<status status="PASS" starttime="20230823 16:04:35.405" endtime="20230823 16:04:35.451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div[class='header__left__logo']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230823 16:04:35.452" endtime="20230823 16:04:44.511"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:div[class='header__left__logo']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230823 16:04:44.527" level="INFO">Element 'css:div[class='header__left__logo']' is displayed.</msg>
+<status status="PASS" starttime="20230823 16:04:44.511" endtime="20230823 16:04:44.527"/>
+</kw>
+<doc>This test case verifies that user is able to successfully Login to FornovaMI</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230823 16:04:28.621" endtime="20230823 16:04:44.527"/>
+</test>
+<test id="s1-t2" name="Verify Successful Logout from FornovaMI" line="19">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div[class='profile-menu__label']</arg>
+<arg>timeout=2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230823 16:04:44.529" endtime="20230823 16:04:44.547"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class='profile-menu__label']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230823 16:04:44.548" level="INFO">Clicking element '//div[@class='profile-menu__label']'.</msg>
+<status status="PASS" starttime="20230823 16:04:44.547" endtime="20230823 16:04:44.598"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[@class='profile-menu__item']//span[contains(text(),'Log Out')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230823 16:04:44.600" level="INFO">Clicking element '//span[@class='profile-menu__item']//span[contains(text(),'Log Out')]'.</msg>
+<status status="PASS" starttime="20230823 16:04:44.599" endtime="20230823 16:04:45.549"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230823 16:04:45.549" endtime="20230823 16:04:45.801"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//input[@class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230823 16:04:45.820" level="INFO">Element '//input[@class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']' is displayed.</msg>
+<status status="PASS" starttime="20230823 16:04:45.802" endtime="20230823 16:04:45.820"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230823 16:04:45.820" endtime="20230823 16:04:48.169"/>
+</kw>
+<doc>This test case verifies that user is able to successfully Logout from FornovaMI</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230823 16:04:44.528" endtime="20230823 16:04:48.169"/>
+</test>
+<doc>Login Functionality</doc>
+<status status="PASS" starttime="20230823 16:04:27.227" endtime="20230823 16:04:48.171"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
