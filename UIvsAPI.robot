@@ -16,7 +16,7 @@ ${Base_URL}  https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net
 #    [documentation]  This test case verifies that user is able to successfully Login to FornovaMI
 #    [tags]  Smoke
 #    Open Browser  https://ci-dev.fornova.com/  Chrome
-#    Wait Until Element Is Visible  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']  timeout=5
+#    Wait Until Element Is Visible  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']  timeout=6
 #    Input Text  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']
 #    Input Password  css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']
 #    Click Element  css:button[type='submit']
