@@ -40,25 +40,33 @@ ${Base_URL}  https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net
 Get API response
 	Create Session  GET_LA_DATA     ${Base_URL}
 	${json_response}=    GET On Session  GET_LA_DATA     /car/get-not-available-docs/2023/8/GB/12
-#    log to console  ${json_response.content}
-    ${json_content}=     convert to string    ${json_response.content}
-#    log to console    ${json_content}
-    ${content_without_end_bracket}=        remove string using regexp    ${json_content}   ['\\]]
-    ${content_without_start_bracket}=        remove string using regexp    ${content_without_end_bracket}   ['\\[]
-#    log to console    ${content}
-    ${pure_json}=    convert string to json     ${content_without_start_bracket}
 
+    ${data_to_string}=   convert to string    ${json_response.content}
+    ${content_without_brackets}=        remove string using regexp    ${data_to_string}   ['\\[\\]']
+    ${data_to_json}=    convert string to json    ${content_without_brackets}
+#    --> For example, we can take TRUE for Budget from the json <--
+    ${data_from_json}=    get value from json    ${data_to_json}  $.pickup_dates.'1'.Budget.'28'
+    ${final_data}=  get from list    ${data_from_json}   0
 
-    ${pickup_dates}=    Get Value From Json    ${pure_json}  $.pickup_dates
-    ${pickup_dates_tostring}=  Convert To String    ${pickup_dates}
-    ${pickup_dates_without_end_bracket}=  remove string using regexp    ${pickup_dates_tostring}   ['\\]]
-    ${pickup_dates_without_start_bracket}=  remove string using regexp    ${pickup_dates_without_end_bracket}   ['\\[]
-    ${pickup_dates_replace}=        Replace String Using Regexp  ${pickup_dates_without_start_bracket}  [\b\d]  'hello'
+##    log to console  ${json_response.content}
+#    ${json_content}=     convert to string    ${json_response.content}
+##    log to console    ${json_content}
+#    ${content_without_end_bracket}=        remove string using regexp    ${json_content}   ['\\]]
+#    ${content_without_start_bracket}=        remove string using regexp    ${content_without_end_bracket}   ['\\[]
+##    log to console    ${content}
+#    ${pure_json}=    convert string to json     ${content_without_start_bracket}
+#
+#
+#    ${pickup_dates}=    Get Value From Json    ${pure_json}  $.pickup_dates
+#    ${pickup_dates_tostring}=  Convert To String    ${pickup_dates}
+#    ${pickup_dates_without_end_bracket}=  remove string using regexp    ${pickup_dates_tostring}   ['\\]]
+#    ${pickup_dates_without_start_bracket}=  remove string using regexp    ${pickup_dates_without_end_bracket}   ['\\[]
+#    ${pickup_dates_replace}=        Replace String Using Regexp  ${pickup_dates_without_start_bracket}  [\b\d]  'hello'
+#
+##    ${pickup_dates_json}=    convert string to json     ${pickup_dates_regex}
+##    ${first_date}=     Get Value From Json    ${pickup_dates}  $.1
 
-#    ${pickup_dates_json}=    convert string to json     ${pickup_dates_regex}
-#    ${first_date}=     Get Value From Json    ${pickup_dates}  $.1
-
-    log to console    ${pickup_dates_replace}
+    log to console    ${final_data}
 #    log to console    ${pickup_dates_regex}
 
 *** Keywords ***
