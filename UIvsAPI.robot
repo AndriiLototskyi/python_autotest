@@ -68,5 +68,5 @@ Get API response
 
     log to console    ${final_data}
 #    log to console    ${pickup_dates_regex}
-     log to console   "branch_2"
+     log to console   "branch_2_fix2"
 *** Keywords ***
