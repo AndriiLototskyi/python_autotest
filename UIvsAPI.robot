@@ -69,5 +69,5 @@ Get API response
     log to console    ${final_data}
 #    log to console    ${pickup_dates_regex}
 
-    log to console    "branch_1"
+    log to console    "branch_1_fix_one_commit_cancel"
 *** Keywords ***
