@@ -5,8 +5,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 import pytest
 
 global credentials_login,credentials_password
-credentials_login="and.lototskyi@gmail.com"
-credentials_password = "555555"
+credentials_login=""
+credentials_password = ""
 
 @pytest.fixture()
 def test_setup():

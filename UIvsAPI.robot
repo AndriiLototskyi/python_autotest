@@ -17,8 +17,8 @@ Verify Successful Login to FornovaMI
     [tags]  Smoke
     Open Browser  https://ci-dev.fornova.com/  Chrome
     Wait Until Element Is Visible  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']  timeout=6
-    Input Text  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']     and.lototskyi@gmail.com
-    Input Password  css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']  555555
+    Input Text  css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']
+    Input Password  css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']
     Click Element  css:button[type='submit']
     Wait Until Element Is Visible  css:div[class='header__left__logo']  timeout=10
     Element Should Be Visible  css:div[class='header__left__logo']
