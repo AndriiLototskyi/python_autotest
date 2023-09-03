@@ -1,90 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20230831 10:37:31.802" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20230903 15:37:37.398" rpa="false" schemaversion="4">
 <suite id="s1" name="UIvsAPI" source="C:\Kaggle\autotest\UIvsAPI.robot">
-<test id="s1-t1" name="Get API response" line="40">
+<test id="s1-t1" name="Verify Successful Login to FornovaMI" line="15">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://ci-dev.fornova.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230903 15:37:37.772" level="INFO">Opening browser 'Chrome' to base url 'https://ci-dev.fornova.com/'.</msg>
+<status status="PASS" starttime="20230903 15:37:37.772" endtime="20230903 15:37:40.908"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<arg>timeout=6</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230903 15:37:40.909" endtime="20230903 15:37:43.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']</arg>
+<arg>and.lototskyi@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:43.947" level="INFO">Typing text 'and.lototskyi@gmail.com' into text field 'css:input[class='form-control icon icon-email ng-untouched ng-pristine ng-invalid']'.</msg>
+<status status="PASS" starttime="20230903 15:37:43.946" endtime="20230903 15:37:44.145"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']</arg>
+<arg>555555</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:44.147" level="INFO">Typing password into text field 'css:input[class='form-control icon icon-pass ng-untouched ng-pristine ng-invalid']'.</msg>
+<msg timestamp="20230903 15:37:44.190" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230903 15:37:44.439" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230903 15:37:44.146" endtime="20230903 15:37:44.440"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button[type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:44.441" level="INFO">Clicking element 'css:button[type='submit']'.</msg>
+<status status="PASS" starttime="20230903 15:37:44.440" endtime="20230903 15:37:44.495"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div[class='header__left__logo']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230903 15:37:55.472" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230903 15:37:55.472" level="FAIL">Element 'css:div[class='header__left__logo']' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20230903 15:37:44.495" endtime="20230903 15:37:55.473"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:div[class='header__left__logo']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230903 15:37:55.474" endtime="20230903 15:37:55.474"/>
+</kw>
+<doc>This test case verifies that user is able to successfully Login to FornovaMI</doc>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20230903 15:37:37.771" endtime="20230903 15:37:55.474">Element 'css:div[class='header__left__logo']' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t2" name="Verify Loacation Availability page opening" line="26">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[contains(@class, 'icon-Unavailable-Locations')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:55.476" level="INFO">Clicking element '//span[contains(@class, 'icon-Unavailable-Locations')]'.</msg>
+<status status="PASS" starttime="20230903 15:37:55.476" endtime="20230903 15:37:55.903"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//label[contains(text(),'POS')]/../div[@class='el-select select el-select--mini']</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230903 15:37:55.905" endtime="20230903 15:37:56.198"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//label[contains(text(),'POS')]/../div[@class='el-select select el-select--mini']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:56.200" level="INFO">Clicking element '//label[contains(text(),'POS')]/../div[@class='el-select select el-select--mini']'.</msg>
+<status status="PASS" starttime="20230903 15:37:56.200" endtime="20230903 15:37:56.336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span[contains(text(), 'GB')]</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230903 15:37:56.409" endtime="20230903 15:37:57.018"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[contains(text(), 'GB')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:57.019" level="INFO">Clicking element '//span[contains(text(), 'GB')]'.</msg>
+<status status="PASS" starttime="20230903 15:37:57.019" endtime="20230903 15:37:57.076"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${pos_gb_exists}</var>
+<arg>//span[contains(text(), 'GB')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:37:57.103" level="INFO">${pos_gb_exists} = GB</msg>
+<status status="PASS" starttime="20230903 15:37:57.076" endtime="20230903 15:37:57.103"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pos_gb_exists}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230903 15:37:57.104" level="INFO">${pos_gb_exists} = GB</msg>
+<status status="PASS" starttime="20230903 15:37:57.104" endtime="20230903 15:37:57.104"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${pos_gb_exists}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230903 15:37:57.105" endtime="20230903 15:37:57.107"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230903 15:37:57.108" endtime="20230903 15:37:59.888"/>
+</kw>
+<doc>This test case verifies that user is able to successfully enter Location Availability screen</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230903 15:37:55.475" endtime="20230903 15:37:59.889"/>
+</test>
+<test id="s1-t3" name="Get API response" line="42">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>GET_LA_DATA</arg>
 <arg>${Base_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230831 10:37:33.878" level="INFO">Creating Session using : alias=GET_LA_DATA, url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230831 10:37:33.878" endtime="20230831 10:37:33.878"/>
+<msg timestamp="20230903 15:37:59.891" level="INFO">Creating Session using : alias=GET_LA_DATA, url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230903 15:37:59.890" endtime="20230903 15:37:59.892"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${json_response}</var>
 <arg>GET_LA_DATA</arg>
 <arg>/car/get-not-available-docs/2023/8/GB/12</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20230831 10:37:34.827" level="INFO">GET Request : url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net/car/get-not-available-docs/2023/8/GB/12 
+<msg timestamp="20230903 15:38:00.487" level="INFO">GET Request : url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net/car/get-not-available-docs/2023/8/GB/12 
  path_url=/car/get-not-available-docs/2023/8/GB/12 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20230831 10:37:34.827" level="INFO">GET Response : url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net/car/get-not-available-docs/2023/8/GB/12 
+<msg timestamp="20230903 15:38:00.487" level="INFO">GET Response : url=https://ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net/car/get-not-available-docs/2023/8/GB/12 
  status=200, reason=OK 
- headers={'x-powered-by': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/json; charset=utf-8', 'etag': 'W/"4584-fMlmYag3xiuRVr/EIOV3Q6fk/58"', 'Vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'date': 'Thu, 31 Aug 2023 07:37:35 GMT', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'} 
+ headers={'x-powered-by': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/json; charset=utf-8', 'etag': 'W/"4584-fMlmYag3xiuRVr/EIOV3Q6fk/58"', 'Vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'date': 'Sun, 03 Sep 2023 12:37:59 GMT', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'} 
  body=[{"_id":1.153664621879805e+48,"fn_pick_up_location_code":"12","month":8,"pickup_dates":{"1":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":true},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false}},"2":{"autoeurope":{"3":true,"7":true,"10":true,"14":true},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"3":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"4":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"greenmotion":{"3":false},"easirent":{"3":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"5":{"Hertz":{"1":true,"2":false,"3":false,"4":false,"5":false,"7":true,"28":false},"autoeurope":{"3":true,"7":true,"10":true,"14":true},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":true,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"6":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":true,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"7":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"greenmotion":{"3":false},"easirent":{"3":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"8":{"autoeurope":{"1":false,"7":false},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"9":{"autoeurope":{"3":true,"7":true,"10":true,"14":true},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"10":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":true,"2":true,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":true,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"11":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"greenmotion":{"3":false},"easirent":{"3":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Budget":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false},"Sixt":{"1":true,"2":false,"3":false,"4":false,"5":false,"7":false,"28":false}},"12":{"autoeurope":{"3":true,"7":true,"10":true,"14":true},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"3":false,"4":false,"7":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Sixt":{"1":true,"2":false,"3":false,"4":false,"7":false},"Enterprise":{"3":false,"4":false,"5":false,"7":false},"Europcar":{"2":false,"3":false,"5":false,"7":false}},"13":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"2":false,"3":false,"5":false,"7":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"7":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false}},"14":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"greenmotion":{"3":false},"easirent":{"3":false},"Avis":{"1":false,"3":false,"4":false,"5":false,"7":false},"Hertz":{"1":false,"2":false,"3":false,"4":false,"7":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"7":false},"Enterprise":{"2":false,"3":false,"7":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false}},"15":{"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"14":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Europcar":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Sixt":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Avis":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false,"10":false},"Budget":{"1":false,"2":false},"Priceline":{"1":false,"2":false}},"16":{"Hertz":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"autoeurope":{"3":true,"7":true,"10":true,"14":true},"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Enterprise":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Europcar":{"1":false,"2":fal... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20230831 10:37:34.827" level="INFO">C:\Kaggle\autotest\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230903 15:38:00.487" level="INFO">C:\Kaggle\autotest\lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ci-backend-dev-ci-ingress.pres-nonprod.gcphosts.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230831 10:37:34.827" level="INFO">${json_response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230831 10:37:33.878" endtime="20230831 10:37:34.827"/>
+<msg timestamp="20230903 15:38:00.488" level="INFO">${json_response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230903 15:37:59.892" endtime="20230903 15:38:00.488"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${data_to_string}</var>
 <arg>${json_response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230831 10:37:34.827" level="INFO">${data_to_string} = [{"_id":1.153664621879805e+48,"fn_pick_up_location_code":"12","month":8,"pickup_dates":{"1":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"...</msg>
-<status status="PASS" starttime="20230831 10:37:34.827" endtime="20230831 10:37:34.827"/>
+<msg timestamp="20230903 15:38:00.491" level="INFO">${data_to_string} = [{"_id":1.153664621879805e+48,"fn_pick_up_location_code":"12","month":8,"pickup_dates":{"1":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"...</msg>
+<status status="PASS" starttime="20230903 15:38:00.490" endtime="20230903 15:38:00.491"/>
 </kw>
 <kw name="Remove String Using Regexp" library="String">
 <var>${content_without_brackets}</var>
 <arg>${data_to_string}</arg>
 <arg>['\\[\\]']</arg>
 <doc>Removes ``patterns`` from the given ``string``.</doc>
-<msg timestamp="20230831 10:37:34.827" level="INFO">${content_without_brackets} = {"_id":1.153664621879805e+48,"fn_pick_up_location_code":"12","month":8,"pickup_dates":{"1":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3...</msg>
-<status status="PASS" starttime="20230831 10:37:34.827" endtime="20230831 10:37:34.827"/>
+<msg timestamp="20230903 15:38:00.493" level="INFO">${content_without_brackets} = {"_id":1.153664621879805e+48,"fn_pick_up_location_code":"12","month":8,"pickup_dates":{"1":{"Expedia":{"1":false,"2":false,"3":false,"4":false,"5":false,"7":false},"Rentalcars":{"1":false,"2":false,"3...</msg>
+<status status="PASS" starttime="20230903 15:38:00.492" endtime="20230903 15:38:00.493"/>
 </kw>
 <kw name="Convert String To Json" library="JSONLibrary">
 <var>${data_to_json}</var>
 <arg>${content_without_brackets}</arg>
 <doc>Convert String to JSON object</doc>
-<msg timestamp="20230831 10:37:34.827" level="INFO">${data_to_json} = {'_id': 1.153664621879805e+48, 'fn_pick_up_location_code': '12', 'month': 8, 'pickup_dates': {'1': {'Expedia': {'1': False, '2': False, '3': False, '4': False, '5': False, '7': False}, 'Rentalcars': {...</msg>
-<status status="PASS" starttime="20230831 10:37:34.827" endtime="20230831 10:37:34.827"/>
+<msg timestamp="20230903 15:38:00.494" level="INFO">${data_to_json} = {'_id': 1.153664621879805e+48, 'fn_pick_up_location_code': '12', 'month': 8, 'pickup_dates': {'1': {'Expedia': {'1': False, '2': False, '3': False, '4': False, '5': False, '7': False}, 'Rentalcars': {...</msg>
+<status status="PASS" starttime="20230903 15:38:00.493" endtime="20230903 15:38:00.494"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
-<var>${data_from_json}</var>
+<var>${pos_from_json}</var>
 <arg>${data_to_json}</arg>
-<arg>$.pickup_dates.'1'.Budget.'28'</arg>
+<arg>$.pos</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20230831 10:37:34.868" level="INFO">${data_from_json} = [True]</msg>
-<status status="PASS" starttime="20230831 10:37:34.827" endtime="20230831 10:37:34.868"/>
+<msg timestamp="20230903 15:38:00.535" level="INFO">${pos_from_json} = ['GB']</msg>
+<status status="PASS" starttime="20230903 15:38:00.495" endtime="20230903 15:38:00.537"/>
 </kw>
-<kw name="Get From List" library="Collections">
-<var>${final_data}</var>
-<arg>${data_from_json}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20230831 10:37:34.878" level="INFO">${final_data} = True</msg>
-<status status="PASS" starttime="20230831 10:37:34.878" endtime="20230831 10:37:34.878"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${pos_to_String}</var>
+<arg>${pos_from_json}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230903 15:38:00.541" level="INFO">${pos_to_String} = ['GB']</msg>
+<status status="PASS" starttime="20230903 15:38:00.540" endtime="20230903 15:38:00.541"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${final_data}</arg>
+<arg>${pos_to_String}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230831 10:37:34.878" endtime="20230831 10:37:34.878"/>
+<status status="PASS" starttime="20230903 15:38:00.542" endtime="20230903 15:38:00.545"/>
 </kw>
-<status status="PASS" starttime="20230831 10:37:33.878" endtime="20230831 10:37:34.878"/>
+<kw name="Remove String Using Regexp" library="String">
+<var>${pos_gb_exists}</var>
+<arg>${pos_gb_exists}</arg>
+<arg>['\\[\\]\\'']</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<msg timestamp="20230903 15:38:00.548" level="INFO">${pos_gb_exists} = GB</msg>
+<status status="PASS" starttime="20230903 15:38:00.547" endtime="20230903 15:38:00.548"/>
+</kw>
+<kw name="Remove String Using Regexp" library="String">
+<var>${pos_to_String}</var>
+<arg>${pos_gb_exists}</arg>
+<arg>['\\[\\]\\'']</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<msg timestamp="20230903 15:38:00.552" level="INFO">${pos_to_String} = GB</msg>
+<status status="PASS" starttime="20230903 15:38:00.548" endtime="20230903 15:38:00.552"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${pos_gb_exists}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230903 15:38:00.553" endtime="20230903 15:38:00.555"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${pos_to_String}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230903 15:38:00.555" endtime="20230903 15:38:00.556"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${pos_to_String}</arg>
+<arg>${pos_gb_exists}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230903 15:38:00.556" endtime="20230903 15:38:00.561"/>
+</kw>
+<status status="PASS" starttime="20230903 15:37:59.890" endtime="20230903 15:38:00.594"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20230831 10:37:31.802" endtime="20230831 10:37:34.878"/>
+<status status="FAIL" starttime="20230903 15:37:37.400" endtime="20230903 15:38:00.604"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="1" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="UIvsAPI">UIvsAPI</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="UIvsAPI">UIvsAPI</stat>
 </suite>
 </statistics>
 <errors>
